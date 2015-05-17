@@ -1,0 +1,15 @@
+<div>
+    <h3> Projects search: </h3>
+
+    <form class="navbar-form" novalidate>
+        <p>Search by name, description or year :  <input class="form-control" ng-model="project"  type="text">  </p>
+    </form>
+
+    <h3>Projects list : <a href="#/manageProject/" class="btn btn-success" > Add a project </a></h3>
+
+    <ul class="nav nav-pills nav-stacked">
+        <li ng-repeat="project in projects | filter:project">
+            <a href="#/projects/{{project.id}}">{{project.title}}</a>
+        </li>
+    </ul>
+</div>

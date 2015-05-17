@@ -1,0 +1,13 @@
+<h3> {{currentUser.id == null ? "Adding user" : "Update user " + currentUser.surname + ' ' + + currentUser.name }} </h3>
+
+<div>
+    <form class="navbar-form" novalidate>
+        <p> Name :  <input class="form-control" ng-model="currentUser.name" type="text"></p>
+        <p> First name :  <input class="form-control" ng-model="currentUser.surname" type="text"></p>
+        <p> Email :  <input class="form-control" ng-model="currentUser.email" type="email"  ></p>
+        <p> Web site :  <input class="form-control" ng-model="currentUser.website" type="url"></p>
+
+        <input value="Validate" class="btn btn-success" ng-click="modify(currentUser)" type="submit">
+        <btn ng-click="goBack()" class="btn btn-primary" > Go back </btn>
+    </form>
+</div>

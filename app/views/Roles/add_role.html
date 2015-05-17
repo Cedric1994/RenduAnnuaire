@@ -1,0 +1,12 @@
+<h3> Adding role </h3>
+
+<div>
+    <form class="navbar-form" novalidate>
+        <p> Role name :  <input class="form-control" ng-model="role.name" type="text"></p>
+        <p> User :  <select ng-options="user.id as user.surname + ' ' + user.name for user in users" ng-model="currentUser.id" class="form-control"  type="text"> </select></p>
+        <p> Project :  <select ng-options="project.id as project.title for project in projects" ng-model="currentProject.id" class="form-control" type="text"> {{project.id}} </select></p>
+
+        <input value="Add role" class="btn btn-success" ng-click="createRole(role, currentUser, currentProject)" type="submit">
+        <btn ng-click="goBack()" class="btn btn-primary"> Go back </btn>
+    </form>
+</div>

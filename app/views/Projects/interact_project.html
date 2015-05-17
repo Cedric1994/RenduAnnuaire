@@ -1,0 +1,12 @@
+<h3> {{currentProject.id == null ? "Adding project" : "Update project " + currentProject.title }} </h3>
+
+<div>
+    <form class="navbar-form" novalidate>
+        <p> Project name :  <input class="form-control" ng-model="currentProject.title" type="text"></p>
+        <p> Description :  <textarea class="form-control"  ng-model="currentProject.description" type="text"> </textarea></p>
+        <p> Start year :  <input class="form-control" ng-model="currentProject.year" type="number"></p>
+
+        <input value="Validate" class="btn btn-success" ng-click="modify(currentProject)" type="submit">
+        <btn ng-click="goBack()"  class="btn btn-primary" > Go back </btn>
+    </form>
+</div>

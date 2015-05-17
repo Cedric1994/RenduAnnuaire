@@ -1,0 +1,29 @@
+<div>
+    <h3> Utilisateur {{currentUser.surname}} {{currentUser.name}}</h3>
+    <p><b> Name:</b> {{currentUser.name}}</p>
+    <p><b> Surname:</b> {{currentUser.surname}}</p>
+    <p><b> Email:</b> {{currentUser.email}}</p>
+    <p><b> Web Site: </b>{{currentUser.website}}</p>
+    <!--<p>Create At : {{currentUser.createdAt}}</p>
+    <p>Update At : {{currentUser.updatedAt}}</p>-->
+
+    <a href="#/manageUser/{{currentUser.id}}"  class="btn btn-info" > Update </button></a>
+    <btn ng-click="deleteUser(currentUser.id)" class="btn btn-danger" > Delete </btn>
+    <a href="#/users" class="btn btn-primary" > Back to list </a>
+
+    <h3>  List of the projects for {{currentUser.surname}} :  <a href="#/manageRole/user/{{currentUser.id}}" class="btn btn-success" > Add a project </a> </h3>
+
+    <div>
+        <ul ng-repeat="project in projects">
+
+            <li ng-repeat="role in roles | filter:{'ProjectId': project.id}:true" >
+                <a class="btn btn-default" href="#/projects/{{role.ProjectId}}">{{role.name == null ? "Undefined role" : role.name}} in the project  {{project.title}} </a>
+                <a class="btn btn-info" href="#/manageRole/role/{{role.id}}/user/{{currentUser.id}}" type="button" >
+                    <span class="glyphicon glyphicon-pencil"> </span>
+                </a>
+                <btn class="btn btn-danger" ng-click="removeProjectToUser(currentUser.id, project.id)"> X </btn>
+            </li>
+        </ul>
+    </div>
+
+</div>
